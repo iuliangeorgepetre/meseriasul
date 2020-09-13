@@ -19,20 +19,24 @@
       required
     ></v-text-field>
 
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[v => !!v || 'Item is required']"
-      label="Item"
+        <v-text-field
+      v-model="username"
+      :counter="10"
+      :rules="usernameRules"
+      label="Username"
       required
-    ></v-select>
+    ></v-text-field>
 
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
+        <v-text-field
+      v-model="pass"
+      :counter="10"
+      :type= 'password'
+      :rules="passRules"
+      label="Password"
       required
-    ></v-checkbox>
+    ></v-text-field>
+
+   
 
     <v-btn
       :disabled="!valid"
@@ -68,21 +72,20 @@
       name: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+      ],
+      usernameRules: [
+        v => !!v || 'Username is required',
+        v => (v && v.length >= 6) || 'Username must be at least 6 characters long',
+      ],
+      passRules: [
+        v => !!v || 'Password is required',
+        v => (v && v.length >= 8) || 'Password must be at least 8 characters long',
       ],
       email: '',
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      ],
-      select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-      ],
-      checkbox: false,
+      ]
     }),
 
     methods: {

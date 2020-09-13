@@ -9,10 +9,16 @@
 
 <script>
 import FormLogin  from '@/components/FormLogin';
+import axios from 'axios';
 export default {
   name:'Login',
   components: {
     FormLogin
+  },
+  data(){
+    return {
+      
+    }
   }
 }
 </script>
