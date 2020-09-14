@@ -1,18 +1,18 @@
 <template>
   <div class="login">
-    <h1>This is a login page</h1>
+    <h1>This is a register page</h1>
     <div class="container">
-      <FormLogin/>
+      <FormRegister/>
     </div>
 </div>
 </template>
 
 <script>
-import FormLogin  from '@/components/FormLogin';
+import FormRegister  from '@/components/FormRegister';
 export default {
   name:'Login',
   components: {
-    FormLogin
+    FormRegister
   },
   data(){
     return {

@@ -76,7 +76,7 @@
 
   export default {
     
-    name: 'FormLogin',
+    name: 'FormRegister',
     data() {
       return{
         valid: true,
@@ -119,13 +119,13 @@
         formData.append('passwordd', this.passwordd);
         formData.append('email', this.email);
         formData.append('name', this.name);
-        axios.post('http://localhost:3000/api/user/login', {
-          name:this.name,
-          email:this.email,
-          password:this.passwordd
+        axios.post('http://localhost:3000/api/user/register', {
+            name:this.name,
+            password:this.passwordd,
+            email:this.email
         })
         .then(response => {
-            console.log(response.data); //AICI E TOKENUL JWT
+            console.log(response);
         });
       }
     },
